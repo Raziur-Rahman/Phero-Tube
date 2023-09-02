@@ -2,6 +2,8 @@
 document.getElementById('blog-btn').addEventListener('click', function(){
     window.location.href = 'blog.html';
 })
+
+//function for Category tab implement Dynamicaly
 const CategoriesTab = async () => {
     const categoriesContainer = document.getElementById("Categories-Container");
 
@@ -17,10 +19,13 @@ const CategoriesTab = async () => {
             `;
         categoriesContainer.appendChild(tab);
     });
-    
+
+    // Default call cards
     handleCategory(`${data[0].category_id}`);
+    
 }
 
+// Function for handle onclick on category tabs
 const handleCategory = async (ctgId) => {
     const btn = document.getElementById('SortByBtn');
     const response = await fetch(`https://openapi.programming-hero.com/api/videos/category/${ctgId}`);
@@ -47,10 +52,10 @@ const handleCategory = async (ctgId) => {
 
 }
 
+// if there is no Data in API, than Execute this function
 const notFound = () => {
     const cardContainer = document.getElementById('card-container');
     cardContainer.innerHTML = '';
-    // const notFoundField = document.getElementById("content-container");
     cardContainer.classList = `flex flex-col justify-center items-center mt-24 md:mt-28 lg:mt-36`;
     cardContainer.innerHTML = `
         <img src="images/Icon.png" alt="Author Image...">
@@ -59,6 +64,7 @@ const notFound = () => {
     `;
 }
 
+// Function for loading card data dynamically
 const categoriesDataLoad = async (data) => {
     const cardContainer = document.getElementById('card-container');
     cardContainer.classList = `grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 my-10 px-5 md:px-16`;
@@ -88,9 +94,9 @@ const categoriesDataLoad = async (data) => {
         `;
         cardContainer.appendChild(card);
     });
-
 }
 
+// Function for convert Second into hours and minute
 const ConvertPostedDate =(date) =>{
     if(date !== ''){
         let timeInSec = parseFloat(date); 
@@ -117,6 +123,7 @@ const ConvertPostedDate =(date) =>{
     } 
 }
 
+// Function for sorting array object
 const sortByView = async (ctgId) => {
     const response = await fetch(`https://openapi.programming-hero.com/api/videos/category/${ctgId}`);
 
