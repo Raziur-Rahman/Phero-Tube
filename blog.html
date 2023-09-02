@@ -4,39 +4,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Blog</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body>
-    <!-- <header class="md:px-16 mt-5">
-        <div class="navbar bg-base-100">
-            <div class="navbar-start">
-                <a class="hover:bg-slate-300 rounded-md"><img class="mx-auto md:mx-0 py-2 w-3/4"
-                    src="images/Logo.png" alt=""></a>
-            </div>
-            <div class="navbar-center">
-                <button class="navber-center py-2 px-5 rounded-md font-medium my-5 md:my-2 bg-slate-300 hover:bg-gray-600 hover:text-white" id="SortByBtn">
-                 SortBy View
-                </button>
-            </div>
-            <div class="navbar-end">
-                <a class="px-8 py-2 rounded-md font-medium text-white bg-[#FF1F3D] hover:bg-gray-600">Blog</a>
-            </div>
-        </div>
+    <section class="mx-10 md:mx-20 lg:mx-52 my-10">
 
-        <hr class="mt-2  h-[2px]  bg-gray-600 opacity-40 dark:opacity-40" />
-    </header> -->
-    <div class="navbar mt- bg-gray-500">
-        <div class="navbar-start">
-            <button>btn1</button>
-        </div>
-        <div class="navbar-center">
-            <a class="btn btn-ghost normal-case text-xl">Btn2I</a>
-        </div>
-        <div class="navbar-end">
-            <button>btn3</button>
-        </div>
-    </div>
+        <article>
+            <h1 class="text-3xl font-semibold text-blue-600">Discussion the scope of var, let, and const in JavaScript
+            </h1>
+            <p class="bg-gray-300 rounded-xl text-xl px-8 py-5">
+                <span class="block">In JavaScript, var, let, and const are used to declare variables, but they differ in
+                    terms of scope and redeclaration. </span>
+                <br>
+                <span class="text-xl font-semibold text-blue-700">var:</span> var keyword is a global scope varaiable.
+                we can redeclare a variable in same name multiple time using "var" keyword. when we declare a variable
+                using <span class="text-blue-600">var</span> keyword outside a function it hoisting at the top. It can
+                be access all functions and methods. So <span class="text-blue-600">var</span> variables are hoisted to the top of their scope and initialized with a value of undefined.
+                <br>
+                <br>
+                <span class="text-xl font-semibold text-blue-700">let: </span>let's itroduced in es6. let is now
+                preferred for variable declaration. It's no surprise as it comes as an improvement to <span
+                    class="text-blue-600">var</span> declarations. It also solves the problem with var. we cannot
+                redeclare same named variable using "let" keyword, it will give syntex error.
+                <br>
+                <br>
+                A block lives in curly braces. Anything within curly braces is a block. So a variable declared in a
+                block with let is only available for use within that block. it cannot be accessalble outside the block
+                scop.
+                let also hoisting at the top, but let do not allow same name variable, that's why it doesn't have
+                reassignment problem.
+                <br>
+                <br>
+                <span class="text-xl font-semibold text-blue-700">const: </span>const Also introduced in ES6 and is
+                block-scoped like `let`. The difference is that `const` cannot be reassigned or redeclared. It's used
+                for values that are not supposed to change after their initial assignment. However, it's important to
+                note that for objects and arrays, `const` does not guarantee immutability of the object or array itself,
+                but only the assignment. `const` also a block scop variable. const doesn't hoist at the top.
+                <br>
+                <br>
+                In general, it's recommended to use `let` and `const` for variable declaration in modern JavaScript to
+                avoid potential issues with hoisting and to make the code more predictable and easier to understand.
+            </p>
+        </article>
+        <article class="my-10">
+            <h1 class="text-3xl font-semibold text-blue-600">Use cases of null and undefined </h1>
+            <div class="bg-gray-200 rounded-xl text-xl px-8 py-5">
+                <p>
+                    In JavaScript, <span class="text-blue-600">null</span> and <span class="text-blue-600">undefined</span> are both used to represent the absence of value, but they are used in slightly different scenarios.
+                    <br>
+                    <br>
+    
+                    <span class="text-blue-600">undefined</span> is the default value of a variable that has not been  assigned a specific value, or a function that does not return any value. It's also the value of a property that does not exist in an object. Here are some use cases:
+                </p>
+    
+                <div class="pl-10 my-5">
+                    <ol class="list-decimal">
+                        <li>When you declare a variable but do not assign a value to it, JavaScript automatically assigns it the value <span class="text-blue-600">undefined</span>.</li>
+                        <li>If a function does not explicitly return a value, it returns <span class="text-blue-600">undefined</span>. </li>
+                        <li>If you try to access a property in an object that does not exist, you get <span class="text-blue-600">undefined</span>.</li>
+                    </ol>
+                </div>
+                <p>
+                    On the other hand, <span class="text-blue-600">null</span> is an assignment value that represents no value or no object. It's more
+                    explicit and is often used when you want to make it clear that a variable should have no value. Here are some use cases:
+    
+                </p>
+                <div class="pl-10 my-5" >
+                    <ol class="list-decimal">
+                        <li>You can assign <span class="text-blue-600">null</span> to a variable to represent no value or no object. It means the variable points to no object.</li>
+                        <li>In JavaScript, <span class="text-blue-600">null</span> is often used in object-oriented programming to indicate that a pointer points to no object.</li>
+        
+                    </ol>
+                </div>
+                <p>
+                    In short, <span class="text-blue-600">undefined</span> means a variable has been declared but has not yet been assigned a value. On the other hand, <span class="text-blue-600">null</span> is an assignment value that means the variable points to no object.
+                </p>
+            </div>
+
+        </article>
+        <article>
+            <div class="bg-gray-200 rounded-xl text-xl px-8 py-5">
+                <h1 class="text-3xl font-semibold text-blue-600">REST API in JavaScript </h1>
+                <p>
+                    A REST API (Representational State Transfer Application Programming Interface) is a set of rules and conventions for building and interacting with web services. It's a way for different software systems to communicate with each other, typically over HTTP.
+                </p>
+                <p class="my-5">
+                    In a REST API, resources are get from URLs, and are accessed using standard HTTP methods, such as <span class="text-blue-600">GET</span>, <span class="text-blue-600">POST</span>, <span class="text-blue-600">PUT</span>, and <span class="text-blue-600">DELETE</span>. Defination of 
+                    it's method are given below : 
+                </p>
+                <div class="pl-10 mb-5">
+                    <ol class="list-decimal">
+                        <li> - GET is used to retrieve data from the server.</li>
+                        <li> - POST is used to send data to the server to create a new resource.</li>
+                        <li> - PUT is used to update an existing resource on the server.</li>
+                        <li> - DELETE is used to remove a resource from the server.</li>
+                    </ol>
+
+                </div>
+                <p>
+                    REST APIs are stateless, meaning that each request from a client to a server must contain all the information needed to understand and process the request. The server does not store any information about the client between requests.
+                    <br>
+                    <br>
+                    REST APIs are commonly used in web applications for handling CRUD operations (Create, Read, Update, Delete) on data. They are popular due to their simplicity and the widespread use of HTTP.
+                </p>
+            </div>
+        </article>
+
+    </section>
+
+    <script src="Scripts/index.js"></script>
 </body>
 
 </html>
